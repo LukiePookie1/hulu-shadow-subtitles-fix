@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Hulu Shadow Modifications
+// @name         Hulu - Remove Control Bar Shadow
 // @namespace    http://tampermonkey.net/
-// @version      1.1
-// @description  Modify Hulu UI to Minimize Shadow
+// @version      1.0
+// @description  Removes the shadow that pops up when moving the mouse to view the control bar on Hulu
 // @match        https://www.hulu.com/*
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -10,12 +10,10 @@
 (function() {
     'use strict';
 
-    // Remove bottom shadow
+    // Remove the shadow/linear gradient from the control bar
     GM_addStyle(`
         .FliptrayWrapper:before {
-            content: "" !important;
-            top: unset !important;
+            display: none !important;
         }
     `);
-
 })();
